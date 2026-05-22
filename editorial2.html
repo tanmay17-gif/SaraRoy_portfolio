@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Roy © — Second Skin</title>
+    <link rel="icon" href="images/logo1.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* Aeonik Font Face Declarations */
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-BoldItalic.ttf') format('truetype');
+            font-weight: 700;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-BlackItalic.ttf') format('truetype');
+            font-weight: 900;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Air.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Thin.ttf') format('truetype');
+            font-weight: 200;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-LightItalic.ttf') format('truetype');
+            font-weight: 300;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Aeonik';
+            src: url('fonts/Aeonik-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #0a0a0a;
+            color: #ffe5d5;
+            font-family: 'Aeonik', 'DM Sans', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* ── Left panel: scrollable text ── */
+        .left-col {
+            width: 340px;
+            min-width: 260px;
+            flex-shrink: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 60px 40px 60px 48px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255,229,213,0.06);
+            position: relative;
+            z-index: 10;
+            background: rgba(10,10,10,0.97);
+        }
+        .left-col::-webkit-scrollbar { width: 2px; }
+        .left-col::-webkit-scrollbar-thumb { background: #2a2a2a; }
+
+        .back-btn {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #bfaca0;
+            text-decoration: none;
+            margin-bottom: 56px;
+            border-bottom: 1px solid rgba(191,172,160,0.3);
+            padding-bottom: 4px;
+            transition: color 0.3s;
+            align-self: flex-start;
+        }
+        .back-btn:hover { color: #fb4e2b; }
+
+        .ed-tag {
+            font-size: 9px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Aeonik', sans-serif;
+            font-weight: 700;
+            font-size: 52px;
+            font-style: normal;
+            line-height: 1.0;
+            margin-bottom: 28px;
+            color: #ffe5d5;
+            letter-spacing: -0.02em;
+        }
+
+        .concept-label {
+            font-size: 9px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 14px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.85;
+            color: rgba(255,229,213,0.65);
+            margin-bottom: 48px;
+        }
+
+        .credits {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,229,213,0.08);
+            padding-top: 28px;
+        }
+
+        .credits h3 {
+            font-size: 10px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 16px;
+        }
+
+        .credit-item {
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: rgba(255,229,213,0.6);
+            display: flex;
+            gap: 8px;
+        }
+        .credit-item strong {
+            color: #ffe5d5;
+            font-weight: 500;
+            min-width: 100px;
+        }
+
+        .drag-hint {
+            margin-top: 32px;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            color: rgba(255,229,213,0.25);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .drag-hint::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: #fb4e2b;
+            flex-shrink: 0;
+        }
+
+        /* ── Right canvas: drag area ── */
+        .canvas {
+            flex-grow: 1;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Each draggable image */
+        .drag-img {
+            position: absolute;
+            cursor: grab;
+            user-select: none;
+            border-radius: 3px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            transition: box-shadow 0.2s, transform 0.1s;
+            will-change: transform;
+        }
+        .drag-img:hover {
+            box-shadow: 0 16px 48px rgba(0,0,0,0.8);
+        }
+        .drag-img.dragging {
+            cursor: grabbing;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.9);
+            transform: scale(1.02);
+        }
+        .drag-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            border-radius: 3px;
+        }
+
+        /* ── MOBILE: stacked layout ── */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow: auto;
+            }
+            .left-col {
+                width: 100%;
+                height: auto;
+                overflow-y: visible;
+                padding: 40px 24px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,229,213,0.06);
+            }
+            .canvas {
+                height: auto;
+                overflow: visible;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 32px 24px;
+            }
+            .drag-img {
+                position: static !important;
+                transform: none !important;
+                width: 100% !important;
+                height: auto !important;
+                cursor: default;
+            }
+            .drag-img img { height: auto; }
+            .drag-hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LEFT TEXT PANEL -->
+    <div class="left-col">
+        <a href="index.html" class="back-btn">← Back</a>
+
+        <div class="ed-tag">2nd Editorial</div>
+        <h1>Second<br>Skin</h1>
+
+        <div class="concept-label">Concept</div>
+        <p>People are constantly switching between the visual and real world and makeup/skincare are an extension of cultural and personal identity. Fashion is an interface that changes and adapts into the modern identity day by day.</p>
+
+        <div class="credits">
+            <h3>Credits</h3>
+            <div class="credit-item"><strong>Model</strong> Deimante Nomeikaite</div>
+            <div class="credit-item"><strong>Photographer</strong> Enrico Labriola</div>
+            <div class="credit-item"><strong>Makeup Artist</strong> Alexandra Scarlat</div>
+            <div class="credit-item"><strong>Stylist</strong> Sara Roy</div>
+        </div>
+
+        <div class="drag-hint">Drag images to rearrange</div>
+    </div>
+
+    <!-- DRAG CANVAS -->
+    <div class="canvas" id="canvas">
+        <div class="drag-img" style="width:40%; height:55%; top:4%; left:4%;">
+            <img src="images/Editorial 2.png" alt="Second Skin I">
+        </div>
+        <div class="drag-img" style="width:32%; height:40%; top:3%; left:52%;">
+            <img src="images/beauty_.png" alt="Second Skin II">
+        </div>
+        <div class="drag-img" style="width:36%; height:48%; top:48%; left:54%;">
+            <img src="images/sara roy_04_03_264988.png" alt="Second Skin III">
+        </div>
+        <div class="drag-img" style="width:34%; height:38%; top:58%; left:6%;">
+            <img src="images/sara roy_04_03_265075.png" alt="Second Skin IV">
+        </div>
+        <div class="drag-img" style="width:28%; height:32%; top:42%; left:34%;">
+            <img src="images/skin gradient_.png" alt="Second Skin V">
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const draggables = canvas.querySelectorAll('.drag-img');
+        let zBase = 10;
+
+        draggables.forEach(el => {
+            el.addEventListener('mousedown', e => {
+                if (window.innerWidth <= 768) return;
+                e.preventDefault();
+                startDrag(el, e.clientX, e.clientY);
+            });
+
+            el.addEventListener('touchstart', e => {
+                if (window.innerWidth <= 768) return;
+                e.preventDefault();
+                const t = e.touches[0];
+                startDrag(el, t.clientX, t.clientY);
+            }, { passive: false });
+        });
+
+        function startDrag(el, startCX, startCY) {
+            const rect = el.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+            const offsetX = startCX - rect.left;
+            const offsetY = startCY - rect.top;
+
+            el.classList.add('dragging');
+            zBase++;
+            el.style.zIndex = zBase;
+
+            function onMove(cx, cy) {
+                let newLeft = cx - canvasRect.left - offsetX;
+                let newTop  = cy - canvasRect.top  - offsetY;
+                newLeft = Math.max(0, Math.min(newLeft, canvasRect.width  - el.offsetWidth));
+                newTop  = Math.max(0, Math.min(newTop,  canvasRect.height - el.offsetHeight));
+                el.style.left = newLeft + 'px';
+                el.style.top  = newTop  + 'px';
+            }
+
+            const onMouseMove = e => { e.preventDefault(); onMove(e.clientX, e.clientY); };
+            const onTouchMove = e => { e.preventDefault(); onMove(e.touches[0].clientX, e.touches[0].clientY); };
+
+            const onEnd = () => {
+                el.classList.remove('dragging');
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('touchmove', onTouchMove);
+                document.removeEventListener('mouseup', onEnd);
+                document.removeEventListener('touchend', onEnd);
+            };
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('touchmove', onTouchMove, { passive: false });
+            document.addEventListener('mouseup', onEnd);
+            document.addEventListener('touchend', onEnd);
+        }
+    </script>
+    <script>
+        // Frontend Security Measures
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.keyCode === 123 || 
+               (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || 
+               (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
