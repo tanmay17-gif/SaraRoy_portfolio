@@ -208,9 +208,9 @@
             cursor: grab;
             user-select: none;
             border-radius: 3px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-            transition: box-shadow 0.2s, transform 0.1s;
-            will-change: transform;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+            transition: box-shadow 0.2s;
+            will-change: left, top;
         }
         .drag-img:hover {
             box-shadow: 0 16px 48px rgba(0,0,0,0.8);
@@ -295,54 +295,39 @@
         let zBase = 10;
 
         draggables.forEach(el => {
-            el.addEventListener('mousedown', e => {
-                if (window.innerWidth <= 768) return;
-                e.preventDefault();
-                startDrag(el, e.clientX, e.clientY);
-            });
-
-            el.addEventListener('touchstart', e => {
-                if (window.innerWidth <= 768) return;
-                e.preventDefault();
-                const t = e.touches[0];
-                startDrag(el, t.clientX, t.clientY);
-            }, { passive: false });
+            el.addEventListener('mousedown', e => { e.preventDefault(); startDrag(el, e.clientX, e.clientY); });
+            el.addEventListener('touchstart', e => { e.preventDefault(); startDrag(el, e.touches[0].clientX, e.touches[0].clientY); }, { passive: false });
         });
 
         function startDrag(el, startCX, startCY) {
             const rect = el.getBoundingClientRect();
-            const canvasRect = canvas.getBoundingClientRect();
-            const offsetX = startCX - rect.left;
-            const offsetY = startCY - rect.top;
+            const cr   = canvas.getBoundingClientRect();
+            const ox = startCX - rect.left;
+            const oy = startCY - rect.top;
 
             el.classList.add('dragging');
-            zBase++;
-            el.style.zIndex = zBase;
+            el.style.zIndex = ++zBase;
 
-            function onMove(cx, cy) {
-                let newLeft = cx - canvasRect.left - offsetX;
-                let newTop  = cy - canvasRect.top  - offsetY;
-                newLeft = Math.max(0, Math.min(newLeft, canvasRect.width  - el.offsetWidth));
-                newTop  = Math.max(0, Math.min(newTop,  canvasRect.height - el.offsetHeight));
-                el.style.left = newLeft + 'px';
-                el.style.top  = newTop  + 'px';
-            }
-
-            const onMouseMove = e => { e.preventDefault(); onMove(e.clientX, e.clientY); };
-            const onTouchMove = e => { e.preventDefault(); onMove(e.touches[0].clientX, e.touches[0].clientY); };
-
-            const onEnd = () => {
-                el.classList.remove('dragging');
-                document.removeEventListener('mousemove', onMouseMove);
-                document.removeEventListener('touchmove', onTouchMove);
-                document.removeEventListener('mouseup', onEnd);
-                document.removeEventListener('touchend', onEnd);
+            const move = (cx, cy) => {
+                let l = Math.max(0, Math.min(cx - cr.left - ox, cr.width  - el.offsetWidth));
+                let t = Math.max(0, Math.min(cy - cr.top  - oy, cr.height - el.offsetHeight));
+                el.style.left = l + 'px';
+                el.style.top  = t + 'px';
             };
 
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('touchmove', onTouchMove, { passive: false });
-            document.addEventListener('mouseup', onEnd);
-            document.addEventListener('touchend', onEnd);
+            const mm = e => { e.preventDefault(); move(e.clientX, e.clientY); };
+            const tm = e => { e.preventDefault(); move(e.touches[0].clientX, e.touches[0].clientY); };
+            const up = () => {
+                el.classList.remove('dragging');
+                document.removeEventListener('mousemove', mm);
+                document.removeEventListener('touchmove', tm);
+                document.removeEventListener('mouseup',   up);
+                document.removeEventListener('touchend',  up);
+            };
+            document.addEventListener('mousemove', mm);
+            document.addEventListener('touchmove', tm, { passive: false });
+            document.addEventListener('mouseup',   up);
+            document.addEventListener('touchend',  up);
         }
     </script>
     <script>
