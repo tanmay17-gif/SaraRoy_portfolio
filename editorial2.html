@@ -199,6 +199,7 @@
             height: 100vh;
             position: relative;
             overflow: hidden;
+            touch-action: none;
         }
 
         /* Each draggable image */
@@ -230,35 +231,18 @@
 
         /* ── MOBILE: stacked layout ── */
         @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                height: auto;
-                overflow: auto;
-            }
+            body { flex-direction: column; height: auto; overflow-y: auto; }
             .left-col {
-                width: 100%;
-                height: auto;
-                overflow-y: visible;
-                padding: 40px 24px;
-                border-right: none;
+                width: 100%; height: auto; overflow-y: visible;
+                padding: 40px 24px 32px; border-right: none;
                 border-bottom: 1px solid rgba(255,229,213,0.06);
             }
+            /* Canvas becomes a tall free-scroll draggable area on mobile */
             .canvas {
-                height: auto;
-                overflow: visible;
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                padding: 32px 24px;
+                height: 90vh;
+                overflow: hidden;
+                touch-action: none;
             }
-            .drag-img {
-                position: static !important;
-                transform: none !important;
-                width: 100% !important;
-                height: auto !important;
-                cursor: default;
-            }
-            .drag-img img { height: auto; }
             .drag-hint { display: none; }
         }
     </style>
