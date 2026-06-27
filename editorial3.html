@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +47,7 @@
         .drag-img { position: absolute; cursor: grab; user-select: none; border-radius: 3px; box-shadow: 0 8px 32px rgba(0,0,0,0.55); transition: box-shadow 0.2s; will-change: left, top; }
         .drag-img:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.8); }
         .drag-img.dragging { cursor: grabbing; box-shadow: 0 24px 60px rgba(0,0,0,0.9); transform: scale(1.02); transition: box-shadow 0.2s, transform 0.15s; }
-        .drag-img img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; border-radius: 3px; }
+        .drag-img img { display: block; width: 100%; height: auto; pointer-events: none; border-radius: 3px; }
 
         @media (max-width: 768px) {
             body { flex-direction: column; height: auto; overflow-y: auto; }
@@ -78,19 +78,19 @@
     </div>
 
     <div class="canvas" id="canvas">
-        <div class="drag-img" style="width:26%; height:50%; top:3%; left:1%; z-index:1;"><img src="images/ed3_1.jpg" alt="Work Without Walls I"></div>
-        <div class="drag-img" style="width:20%; height:38%; top:3%; left:28%; z-index:2;"><img src="images/ed3_2.jpg" alt="Work Without Walls II"></div>
-        <div class="drag-img" style="width:24%; height:46%; top:2%; left:49%; z-index:3;"><img src="images/ed3_3.jpg" alt="Work Without Walls III"></div>
-        <div class="drag-img" style="width:22%; height:42%; top:3%; left:74%; z-index:4;"><img src="images/ed3_4.jpg" alt="Work Without Walls IV"></div>
-        <div class="drag-img" style="width:24%; height:38%; top:42%; left:1%; z-index:5;"><img src="images/ed3_5.jpg" alt="Work Without Walls V"></div>
-        <div class="drag-img" style="width:22%; height:36%; top:38%; left:26%; z-index:6;"><img src="images/ed3_6.jpg" alt="Work Without Walls VI"></div>
-        <div class="drag-img" style="width:24%; height:40%; top:40%; left:49%; z-index:7;"><img src="images/ed3_7.jpg" alt="Work Without Walls VII"></div>
-        <div class="drag-img" style="width:22%; height:36%; top:43%; left:74%; z-index:8;"><img src="images/ed3_8.jpg" alt="Work Without Walls VIII"></div>
-        <div class="drag-img" style="width:24%; height:36%; top:58%; left:2%; z-index:9;"><img src="images/ed3_9.jpg" alt="Work Without Walls IX"></div>
-        <div class="drag-img" style="width:22%; height:38%; top:55%; left:27%; z-index:10;"><img src="images/ed3_10.jpg" alt="Work Without Walls X"></div>
-        <div class="drag-img" style="width:22%; height:34%; top:57%; left:50%; z-index:11;"><img src="images/ed3_11.jpg" alt="Work Without Walls XI"></div>
-        <div class="drag-img" style="width:22%; height:40%; top:52%; left:73%; z-index:12;"><img src="images/ed3_12.jpg" alt="Work Without Walls XII"></div>
-        <div class="drag-img" style="width:18%; height:32%; top:63%; left:41%; z-index:13;"><img src="images/ed3_13.jpg" alt="Work Without Walls XIII"></div>
+        <div class="drag-img" style="width:22%; top:2%;  left:1%;  z-index:1;"><img src="images/ed3_1.jpg"  alt="Work Without Walls I"></div>
+        <div class="drag-img" style="width:18%; top:2%;  left:24%; z-index:2;"><img src="images/ed3_2.jpg"  alt="Work Without Walls II"></div>
+        <div class="drag-img" style="width:20%; top:2%;  left:43%; z-index:3;"><img src="images/ed3_3.jpg"  alt="Work Without Walls III"></div>
+        <div class="drag-img" style="width:19%; top:2%;  left:64%; z-index:4;"><img src="images/ed3_4.jpg"  alt="Work Without Walls IV"></div>
+        <div class="drag-img" style="width:19%; top:2%;  left:80%; z-index:5;"><img src="images/ed3_5.jpg"  alt="Work Without Walls V"></div>
+        <div class="drag-img" style="width:22%; top:45%; left:2%;  z-index:6;"><img src="images/ed3_6.jpg"  alt="Work Without Walls VI"></div>
+        <div class="drag-img" style="width:20%; top:40%; left:25%; z-index:7;"><img src="images/ed3_7.jpg"  alt="Work Without Walls VII"></div>
+        <div class="drag-img" style="width:20%; top:42%; left:46%; z-index:8;"><img src="images/ed3_8.jpg"  alt="Work Without Walls VIII"></div>
+        <div class="drag-img" style="width:19%; top:38%; left:67%; z-index:9;"><img src="images/ed3_9.jpg"  alt="Work Without Walls IX"></div>
+        <div class="drag-img" style="width:19%; top:40%; left:80%; z-index:10;"><img src="images/ed3_10.jpg" alt="Work Without Walls X"></div>
+        <div class="drag-img" style="width:21%; top:68%; left:3%;  z-index:11;"><img src="images/ed3_11.jpg" alt="Work Without Walls XI"></div>
+        <div class="drag-img" style="width:20%; top:65%; left:25%; z-index:12;"><img src="images/ed3_12.jpg" alt="Work Without Walls XII"></div>
+        <div class="drag-img" style="width:19%; top:66%; left:46%; z-index:13;"><img src="images/ed3_13.jpg" alt="Work Without Walls XIII"></div>
     </div>
 
     <script>
