@@ -2015,7 +2015,7 @@
   NAV
 =============================================-->
     <nav>
-        <a href="#" class="nav-logo"><img src="images/logo2_opt.jpg" alt="Sara Roy" style="height: 48px; display: block; filter: invert(1) brightness(200%);"></a>
+        <a href="#" class="nav-logo"><img src="images/logo1.jpeg" alt="Sara Roy" style="height: 48px; display: block; mix-blend-mode: screen; filter: brightness(2) grayscale(1);"></a>
         <div class="nav-right">
             <div class="nav-btn" id="menuBtn">MENU</div>
         </div>
@@ -2385,7 +2385,7 @@
   FOOTER
 =============================================-->
     <footer>
-        <div class="ft-logo"><img src="images/logo2_opt.jpg" alt="Sara Roy Logo" style="height: 72px; display: block; margin: 0 auto; filter: invert(1) brightness(200%);"></div>
+        <div class="ft-logo"><img src="images/logo1.jpeg" alt="Sara Roy Logo" style="height: 72px; display: block; margin: 0 auto; mix-blend-mode: screen; filter: brightness(2) grayscale(1);"></div>
         <div class="ft-plus">+ + +</div>
         <div class="ft-copy">© 2025 Sara Roy, All Rights Reserved · Milan, Italy</div>
     </footer>
@@ -2407,7 +2407,20 @@
         const preBar = document.getElementById('preBar');
         const preNum = document.getElementById('preNum');
         /* Dynamic flickering preloader: random pattern + swapping images */
-        const preImgs = ['images/pre1.jpg', 'images/pre2.jpg', 'images/pre3.jpg', 'images/pre4.jpg', 'images/work1.jpg', 'images/work2.jpg', 'images/work3.jpg', 'images/work4.jpg'];
+        const preImgs = [
+            'images/pre2.jpg',        // Ed1: Luminescence
+            'images/ed1_extra1.jpg',   // Ed1: extra
+            'images/ed1_extra4.jpg',   // Ed1: extra
+            'images/ed1_extra7.jpg',   // Ed1: extra
+            'images/editorial2_opt.jpg', // Ed2: Second Skin
+            'images/sara_264988_opt.jpg', // Ed2
+            'images/sara_265075_opt.jpg', // Ed2
+            'images/skin_gradient_opt.jpg', // Ed2
+            'images/ed3_1.jpg',        // Ed3: Work Without Walls
+            'images/ed3_3.jpg',        // Ed3
+            'images/ed3_6.jpg',        // Ed3
+            'images/ed3_10.jpg',       // Ed3
+        ];
         const cells = [];
         
         for (let row = 0; row < 4; row++) {
