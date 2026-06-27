@@ -1,63 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sara Roy © — Work Without Walls</title>
     <link rel="icon" href="images/logo1.jpeg">
     <style>
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Air.ttf") format("truetype"); font-weight: 100; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Thin.ttf") format("truetype"); font-weight: 200; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-LightItalic.ttf") format("truetype"); font-weight: 300; font-style: italic; }
-        @font-face { font-family: "Aeonik"; src: url("fonts/Aeonik-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Bold.ttf") format("truetype");
+            font-weight: 700;
+            font-style: normal;
+        }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #0a0a0a; color: #ffe5d5; font-family: "Aeonik", "DM Sans", sans-serif; font-weight: 300; height: 100dvh; overflow: hidden; display: flex; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-BoldItalic.ttf") format("truetype");
+            font-weight: 700;
+            font-style: italic;
+        }
 
-        .left-col { width: 340px; min-width: 240px; flex-shrink: 0; height: 100%; overflow-y: auto; padding: 60px 40px 60px 48px; display: flex; flex-direction: column; border-right: 1px solid rgba(255,229,213,0.06); position: relative; z-index: 10; background: rgba(10,10,10,0.97); }
-        .left-col::-webkit-scrollbar { width: 2px; }
-        .left-col::-webkit-scrollbar-thumb { background: #2a2a2a; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Black.ttf") format("truetype");
+            font-weight: 900;
+            font-style: normal;
+        }
 
-        .back-btn { font-family: "Aeonik", sans-serif; font-weight: 400; display: inline-block; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #bfaca0; text-decoration: none; margin-bottom: 56px; border-bottom: 1px solid rgba(191,172,160,0.25); padding-bottom: 4px; transition: color 0.3s; align-self: flex-start; }
-        .back-btn:hover { color: #fb4e2b; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Air.ttf") format("truetype");
+            font-weight: 100;
+            font-style: normal;
+        }
 
-        .ed-tag { font-family: "Aeonik", sans-serif; font-weight: 400; font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase; color: #fb4e2b; margin-bottom: 18px; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Thin.ttf") format("truetype");
+            font-weight: 200;
+            font-style: normal;
+        }
 
-        h1 { font-family: "Aeonik", sans-serif; font-weight: 700; font-size: 44px; font-style: normal; line-height: 1.0; margin-bottom: 28px; color: #ffe5d5; letter-spacing: -0.02em; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
 
-        .concept-label { font-family: "Aeonik", sans-serif; font-weight: 500; font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: #fb4e2b; margin-bottom: 14px; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Light.ttf") format("truetype");
+            font-weight: 300;
+            font-style: normal;
+        }
 
-        p { font-family: "Aeonik", sans-serif; font-weight: 300; font-size: 13.5px; line-height: 1.85; color: rgba(255,229,213,0.62); margin-bottom: 48px; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-LightItalic.ttf") format("truetype");
+            font-weight: 300;
+            font-style: italic;
+        }
 
-        .credits { margin-top: auto; border-top: 1px solid rgba(255,229,213,0.08); padding-top: 28px; }
-        .credits h3 { font-family: "Aeonik", sans-serif; font-weight: 500; font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: #fb4e2b; margin-bottom: 18px; }
-        .credit-item { font-family: "Aeonik", sans-serif; font-weight: 300; font-size: 12px; margin-bottom: 8px; color: rgba(255,229,213,0.55); display: flex; gap: 10px; }
-        .credit-item strong { font-weight: 400; color: #ffe5d5; min-width: 120px; }
+        @font-face {
+            font-family: "Aeonik";
+            src: url("fonts/Aeonik-Medium.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+        }
 
-        .drag-hint { margin-top: 32px; font-family: "Aeonik", sans-serif; font-weight: 300; font-size: 9px; letter-spacing: 0.25em; color: rgba(255,229,213,0.22); text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
-        .drag-hint::before { content: ""; display: block; width: 20px; height: 1px; background: #fb4e2b; flex-shrink: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        .canvas { flex-grow: 1; height: 100%; position: relative; overflow: hidden; touch-action: none; }
+        body {
+            background: #0a0a0a;
+            color: #ffe5d5;
+            font-family: "Aeonik", "DM Sans", sans-serif;
+            font-weight: 300;
+            height: 100dvh;
+            overflow: hidden;
+            display: flex;
+        }
 
-        .drag-img { position: absolute; cursor: grab; user-select: none; border-radius: 3px; box-shadow: 0 8px 32px rgba(0,0,0,0.55); transition: box-shadow 0.2s; will-change: left, top; }
-        .drag-img:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.8); }
-        .drag-img.dragging { cursor: grabbing; box-shadow: 0 24px 60px rgba(0,0,0,0.9); transform: scale(1.02); transition: box-shadow 0.2s, transform 0.15s; }
-        .drag-img img { display: block; width: 100%; height: auto; pointer-events: none; border-radius: 3px; }
+        .left-col {
+            width: 340px;
+            min-width: 240px;
+            flex-shrink: 0;
+            height: 100%;
+            overflow-y: auto;
+            padding: 60px 40px 60px 48px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255, 229, 213, 0.06);
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 10, 0.97);
+        }
+
+        .left-col::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        .left-col::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+        }
+
+        .back-btn {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 400;
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #bfaca0;
+            text-decoration: none;
+            margin-bottom: 56px;
+            border-bottom: 1px solid rgba(191, 172, 160, 0.25);
+            padding-bottom: 4px;
+            transition: color 0.3s;
+            align-self: flex-start;
+        }
+
+        .back-btn:hover {
+            color: #fb4e2b;
+        }
+
+        .ed-tag {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 400;
+            font-size: 9px;
+            letter-spacing: 0.55em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 700;
+            font-size: 44px;
+            font-style: normal;
+            line-height: 1.0;
+            margin-bottom: 28px;
+            color: #ffe5d5;
+            letter-spacing: -0.02em;
+        }
+
+        .concept-label {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 500;
+            font-size: 9px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 14px;
+        }
+
+        p {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 300;
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: rgba(255, 229, 213, 0.62);
+            margin-bottom: 48px;
+        }
+
+        .credits {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 229, 213, 0.08);
+            padding-top: 28px;
+        }
+
+        .credits h3 {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 500;
+            font-size: 9px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #fb4e2b;
+            margin-bottom: 18px;
+        }
+
+        .credit-item {
+            font-family: "Aeonik", sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: rgba(255, 229, 213, 0.55);
+            display: flex;
+            gap: 10px;
+        }
+
+        .credit-item strong {
+            font-weight: 400;
+            color: #ffe5d5;
+            min-width: 120px;
+        }
+
+        .drag-hint {
+            margin-top: 32px;
+            font-family: "Aeonik", sans-serif;
+            font-weight: 300;
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            color: rgba(255, 229, 213, 0.22);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .drag-hint::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: #fb4e2b;
+            flex-shrink: 0;
+        }
+
+        .canvas {
+            flex-grow: 1;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        .drag-img {
+            position: absolute;
+            cursor: grab;
+            user-select: none;
+            border-radius: 3px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+            transition: box-shadow 0.2s;
+            will-change: left, top;
+        }
+
+        .drag-img:hover {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+        }
+
+        .drag-img.dragging {
+            cursor: grabbing;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+            transform: scale(1.02);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .drag-img img {
+            display: block;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+            border-radius: 3px;
+        }
 
         @media (max-width: 768px) {
-            body { flex-direction: column; height: auto; overflow-y: auto; }
-            .left-col { width: 100%; height: auto; overflow-y: visible; padding: 40px 24px 32px; border-right: none; border-bottom: 1px solid rgba(255,229,213,0.06); }
-            h1 { font-size: 34px; }
-            .canvas { height: 90vh; overflow: hidden; touch-action: none; }
-            .drag-hint { display: none; }
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .left-col {
+                width: 100%;
+                height: auto;
+                overflow-y: visible;
+                padding: 40px 24px 32px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 229, 213, 0.06);
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .canvas {
+                height: 90vh;
+                overflow: hidden;
+                touch-action: none;
+            }
+
+            .drag-hint {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="left-col">
@@ -65,11 +302,12 @@
         <div class="ed-tag">3rd Editorial</div>
         <h1>Work Without Walls</h1>
         <div class="concept-label">Concept</div>
-        <p>Stepping out of the comfort zone and how office becomes domestic and stressful and nature slowly adapts into interior and work feels surreal and poetic.</p>
+        <p>Stepping out of the comfort zone and how office becomes domestic and stressful and nature slowly adapts into
+            interior and work feels surreal and poetic.</p>
         <div class="credits">
             <h3>Credits</h3>
-            <div class="credit-item"><strong>Model</strong> Karin</div>
-            <div class="credit-item"><strong>Photographer</strong> Guij.t</div>
+            <div class="credit-item"><strong>Model</strong> Karina</div>
+            <div class="credit-item"><strong>Photographer</strong> Guilherme Noronha</div>
             <div class="credit-item"><strong>Makeup Artist</strong> Martina Villanacci</div>
             <div class="credit-item"><strong>Styling & Direction</strong> Sara Roy</div>
             <div class="credit-item"><strong>Assistant</strong> Lu Arii</div>
@@ -78,18 +316,30 @@
     </div>
 
     <div class="canvas" id="canvas">
-        <div class="drag-img" style="width:22%; top:2%;  left:1%;  z-index:1;"><img src="images/ed3_1.jpg"  alt="Work Without Walls I"></div>
-        <div class="drag-img" style="width:18%; top:2%;  left:24%; z-index:2;"><img src="images/ed3_2.jpg"  alt="Work Without Walls II"></div>
-        <div class="drag-img" style="width:20%; top:2%;  left:43%; z-index:3;"><img src="images/ed3_3.jpg"  alt="Work Without Walls III"></div>
-        <div class="drag-img" style="width:19%; top:2%;  left:64%; z-index:4;"><img src="images/ed3_4.jpg"  alt="Work Without Walls IV"></div>
-        <div class="drag-img" style="width:19%; top:2%;  left:80%; z-index:5;"><img src="images/ed3_5.jpg"  alt="Work Without Walls V"></div>
-        <div class="drag-img" style="width:22%; top:45%; left:2%;  z-index:6;"><img src="images/ed3_6.jpg"  alt="Work Without Walls VI"></div>
-        <div class="drag-img" style="width:20%; top:40%; left:25%; z-index:7;"><img src="images/ed3_7.jpg"  alt="Work Without Walls VII"></div>
-        <div class="drag-img" style="width:20%; top:42%; left:46%; z-index:8;"><img src="images/ed3_8.jpg"  alt="Work Without Walls VIII"></div>
-        <div class="drag-img" style="width:19%; top:38%; left:67%; z-index:9;"><img src="images/ed3_9.jpg"  alt="Work Without Walls IX"></div>
-        <div class="drag-img" style="width:21%; top:68%; left:3%;  z-index:11;"><img src="images/ed3_11.jpg" alt="Work Without Walls XI"></div>
-        <div class="drag-img" style="width:20%; top:65%; left:25%; z-index:12;"><img src="images/ed3_12.jpg" alt="Work Without Walls XII"></div>
-        <div class="drag-img" style="width:19%; top:66%; left:46%; z-index:13;"><img src="images/ed3_13.jpg" alt="Work Without Walls XIII"></div>
+        <div class="drag-img" style="width:22%; top:2%;  left:1%;  z-index:1;"><img src="images/ed3_1.jpg"
+                alt="Work Without Walls I"></div>
+        <div class="drag-img" style="width:18%; top:2%;  left:24%; z-index:2;"><img src="images/ed3_2.jpg"
+                alt="Work Without Walls II"></div>
+        <div class="drag-img" style="width:20%; top:2%;  left:43%; z-index:3;"><img src="images/ed3_3.jpg"
+                alt="Work Without Walls III"></div>
+        <div class="drag-img" style="width:19%; top:2%;  left:64%; z-index:4;"><img src="images/ed3_4.jpg"
+                alt="Work Without Walls IV"></div>
+        <div class="drag-img" style="width:19%; top:2%;  left:80%; z-index:5;"><img src="images/ed3_5.jpg"
+                alt="Work Without Walls V"></div>
+        <div class="drag-img" style="width:22%; top:45%; left:2%;  z-index:6;"><img src="images/ed3_6.jpg"
+                alt="Work Without Walls VI"></div>
+        <div class="drag-img" style="width:20%; top:40%; left:25%; z-index:7;"><img src="images/ed3_7.jpg"
+                alt="Work Without Walls VII"></div>
+        <div class="drag-img" style="width:20%; top:42%; left:46%; z-index:8;"><img src="images/ed3_8.jpg"
+                alt="Work Without Walls VIII"></div>
+        <div class="drag-img" style="width:19%; top:38%; left:67%; z-index:9;"><img src="images/ed3_9.jpg"
+                alt="Work Without Walls IX"></div>
+        <div class="drag-img" style="width:21%; top:68%; left:3%;  z-index:11;"><img src="images/ed3_11.jpg"
+                alt="Work Without Walls XI"></div>
+        <div class="drag-img" style="width:20%; top:65%; left:25%; z-index:12;"><img src="images/ed3_12.jpg"
+                alt="Work Without Walls XII"></div>
+        <div class="drag-img" style="width:19%; top:66%; left:46%; z-index:13;"><img src="images/ed3_13.jpg"
+                alt="Work Without Walls XIII"></div>
     </div>
 
     <script>
@@ -129,11 +379,12 @@
         }
     </script>
     <script>
-        document.addEventListener("contextmenu", function(e) { e.preventDefault(); });
-        document.addEventListener("keydown", function(e) {
+        document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+        document.addEventListener("keydown", function (e) {
             if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && e.keyCode === 85)) { e.preventDefault(); }
         });
-        document.addEventListener("selectstart", function(e) { e.preventDefault(); });
+        document.addEventListener("selectstart", function (e) { e.preventDefault(); });
     </script>
 </body>
+
 </html>
