@@ -19,54 +19,63 @@
             font-weight: 700;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-BoldItalic.ttf') format('truetype');
             font-weight: 700;
             font-style: italic;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Black.ttf') format('truetype');
             font-weight: 900;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-BlackItalic.ttf') format('truetype');
             font-weight: 900;
             font-style: italic;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Air.ttf') format('truetype');
             font-weight: 100;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Thin.ttf') format('truetype');
             font-weight: 200;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Regular.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Light.ttf') format('truetype');
             font-weight: 300;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-LightItalic.ttf') format('truetype');
             font-weight: 300;
             font-style: italic;
         }
+
         @font-face {
             font-family: 'Aeonik';
             src: url('fonts/Aeonik-Medium.ttf') format('truetype');
@@ -94,7 +103,7 @@
             --accent: #fb4e2b;
             --dark: #080808;
             --gray: #1a1716;
-            --ease: cubic-bezier(.25,.46,.45,.94);
+            --ease: cubic-bezier(.25, .46, .45, .94);
         }
 
         body {
@@ -188,11 +197,13 @@
             left: 0;
             width: 100%;
             transform: translateY(-50%);
-            z-index: -1; /* Truly in the back */
+            z-index: -1;
+            /* Truly in the back */
             white-space: nowrap;
             overflow: hidden;
             pointer-events: none;
-            opacity: 0.02; /* Even more subtle */
+            opacity: 0.02;
+            /* Even more subtle */
             font-family: 'Mango Grotesque', sans-serif;
             font-size: 40vw;
             line-height: 1;
@@ -205,8 +216,13 @@
         }
 
         @keyframes marqueeScroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
         }
 
 
@@ -377,7 +393,9 @@
             pointer-events: none;
         }
 
-        nav * { pointer-events: auto; }
+        nav * {
+            pointer-events: auto;
+        }
 
         .nav-logo {
             font-family: 'Mango Grotesque', sans-serif;
@@ -657,7 +675,8 @@
         /* The hero nav row at very top */
         .hero-topbar {
             position: absolute;
-            top: 60px; /* Pushed down to avoid nav overlap */
+            top: 60px;
+            /* Pushed down to avoid nav overlap */
             left: 0;
             right: 0;
             padding: 28px 48px;
@@ -677,6 +696,7 @@
             color: var(--cream);
             letter-spacing: 0
         }
+
         .hero-bg {
             position: absolute;
             inset: 0;
@@ -791,8 +811,13 @@
         }
 
         @keyframes rotateOrbit {
-            from { transform: rotate(0deg) translateY(-22px); }
-            to { transform: rotate(360deg) translateY(-22px); }
+            from {
+                transform: rotate(0deg) translateY(-22px);
+            }
+
+            to {
+                transform: rotate(360deg) translateY(-22px);
+            }
         }
 
         /* PHILOSOPHY SECTION */
@@ -1835,119 +1860,320 @@
                 padding-top: 24px
             }
         }
-    
+
         /*=============================================
   MOBILE RESPONSIVE — GLOBAL
 =============================================*/
 
-/* Remove custom cursor on touch devices */
-@media (hover: none) {
-    body { cursor: auto; }
-    #cur, #cur-ring { display: none; }
-    .nav-btn { cursor: pointer; }
-    .menu-close { cursor: pointer; }
-}
+        /* Remove custom cursor on touch devices */
+        @media (hover: none) {
+            body {
+                cursor: auto;
+            }
 
-/* Small phones (< 480px) */
-@media (max-width: 480px) {
-    .hero-word-text { font-size: 22vw; }
-    .pre-top-left, .pre-top-right { display: none; }
-    .chess-wrap { width: 280px; height: 280px; }
-    .chess-grid { grid-template-columns: repeat(4, 70px); grid-template-rows: repeat(4, 70px); }
-    .chess-cell { width: 70px; height: 70px; }
-}
+            #cur,
+            #cur-ring {
+                display: none;
+            }
 
-/* Tablets and Phones (< 768px) */
-@media (max-width: 768px) {
-    /* NAV */
-    nav { padding: 20px 24px; }
+            .nav-btn {
+                cursor: pointer;
+            }
 
-    /* HERO */
-    #hero { min-height: 90vh; }
-    .hero-word-text { font-size: 24vw; letter-spacing: -.02em; }
-    .hero-topbar { padding: 16px 24px; font-size: 8px; }
-    .hero-content { padding: 0 24px 0; }
-    .hero-bottom { padding: 24px 24px 48px; grid-template-columns: 1fr; gap: 32px; align-items: center; justify-content: center; }
-    .hero-desc-left, .hero-desc-right { text-align: center; }
+            .menu-close {
+                cursor: pointer;
+            }
+        }
 
-    /* PRELOADER */
-    .chess-wrap { width: 320px; height: 320px; }
-    .chess-grid { grid-template-columns: repeat(4, 80px); grid-template-rows: repeat(4, 80px); }
-    .chess-cell { width: 80px; height: 80px; }
-    .pre-bar { left: 24px; right: 24px; }
-    .pre-bot { left: 24px; right: 24px; }
+        /* Small phones (< 480px) */
+        @media (max-width: 480px) {
+            .hero-word-text {
+                font-size: 22vw;
+            }
 
-    /* MENU */
-    #menu-ov { padding: 0 32px; }
-    .menu-link { font-size: clamp(40px, 12vw, 80px); }
+            .pre-top-left,
+            .pre-top-right {
+                display: none;
+            }
 
-    /* PHILOSOPHY */
-    #philosophy { padding: 80px 24px; }
-    .ph-quote { font-size: 6vw; }
+            .chess-wrap {
+                width: 280px;
+                height: 280px;
+            }
 
-    /* STORY */
-    #story-section { 
-        grid-template-columns: 1fr; 
-        padding: 60px 24px; 
-        gap: 32px; 
-    }
-    .story-center { border-left: none; padding-left: 0; border-top: 1px solid #1e1e1e; padding-top: 32px; }
-    .story-right { border-left: none; padding-left: 0; border-top: 1px solid #1e1e1e; padding-top: 32px; }
+            .chess-grid {
+                grid-template-columns: repeat(4, 70px);
+                grid-template-rows: repeat(4, 70px);
+            }
 
-    /* QUOTE */
-    #quote-section { padding: 80px 24px 100px; }
-    .scroll-text { font-size: clamp(28px, 7vw, 56px); }
+            .chess-cell {
+                width: 70px;
+                height: 70px;
+            }
+        }
 
-    /* COLLECTION */
-    #collection { padding: 60px 24px 60px; }
-    .coll-grid { grid-template-columns: 1fr; }
-    .ci:nth-child(n) { grid-column: span 12; }
-    .coll-title { font-size: clamp(32px, 8vw, 60px); }
-    .coll-count { font-size: 60px; }
+        /* Tablets and Phones (< 768px) */
+        @media (max-width: 768px) {
 
-    /* EXPO / SERVICES */
-    #expo { padding: 60px 24px; }
-    .expo-inner { grid-template-columns: 1fr; gap: 40px; }
-    .expo-heading { font-size: clamp(48px, 14vw, 100px); }
-    .expo-cards { grid-template-columns: 1fr; }
-    .expo-card { border-right: none; border-bottom: 1px solid #1e1e1e; }
-    .expo-card:last-child { border-bottom: none; }
+            /* NAV */
+            nav {
+                padding: 20px 24px;
+            }
 
-    /* SHOOT / EDITORIAL */
-    #shoot-section { padding: 60px 24px; }
-    #shoot-section .shoot-container { flex-direction: column; gap: 60px; }
+            /* HERO */
+            #hero {
+                min-height: 90vh;
+            }
 
-    /* CONTACT */
-    #contact { padding: 80px 24px; }
-    .ct-socials { flex-direction: column; align-items: center; gap: 20px; }
-    .ct-title { font-size: clamp(36px, 10vw, 72px); }
-    .ct-email { font-size: clamp(12px, 3.5vw, 18px); letter-spacing: 0.15em; }
+            .hero-word-text {
+                font-size: 24vw;
+                letter-spacing: -.02em;
+            }
 
-    /* FOOTER */
-    footer { flex-direction: column; padding: 32px 24px; gap: 16px; text-align: center; }
-    .ft-plus { justify-content: center; }
-}
+            .hero-topbar {
+                padding: 16px 24px;
+                font-size: 8px;
+            }
 
-/* Tablets landscape (768px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-word-text { font-size: 23vw; }
-    #story-section { grid-template-columns: 1fr 1fr; }
-    .story-right { display: none; }
-    .coll-grid { grid-template-columns: repeat(6, 1fr); }
-    .ci:nth-child(1) { grid-column: span 6; }
-    .ci:nth-child(n) { grid-column: span 3; }
-}
-</style>
+            .hero-content {
+                padding: 0 24px 0;
+            }
+
+            .hero-bottom {
+                padding: 24px 24px 48px;
+                grid-template-columns: 1fr;
+                gap: 32px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-desc-left,
+            .hero-desc-right {
+                text-align: center;
+            }
+
+            /* PRELOADER */
+            .chess-wrap {
+                width: 320px;
+                height: 320px;
+            }
+
+            .chess-grid {
+                grid-template-columns: repeat(4, 80px);
+                grid-template-rows: repeat(4, 80px);
+            }
+
+            .chess-cell {
+                width: 80px;
+                height: 80px;
+            }
+
+            .pre-bar {
+                left: 24px;
+                right: 24px;
+            }
+
+            .pre-bot {
+                left: 24px;
+                right: 24px;
+            }
+
+            /* MENU */
+            #menu-ov {
+                padding: 0 32px;
+            }
+
+            .menu-link {
+                font-size: clamp(40px, 12vw, 80px);
+            }
+
+            /* PHILOSOPHY */
+            #philosophy {
+                padding: 80px 24px;
+            }
+
+            .ph-quote {
+                font-size: 6vw;
+            }
+
+            /* STORY */
+            #story-section {
+                grid-template-columns: 1fr;
+                padding: 60px 24px;
+                gap: 32px;
+            }
+
+            .story-center {
+                border-left: none;
+                padding-left: 0;
+                border-top: 1px solid #1e1e1e;
+                padding-top: 32px;
+            }
+
+            .story-right {
+                border-left: none;
+                padding-left: 0;
+                border-top: 1px solid #1e1e1e;
+                padding-top: 32px;
+            }
+
+            /* QUOTE */
+            #quote-section {
+                padding: 80px 24px 100px;
+            }
+
+            .scroll-text {
+                font-size: clamp(28px, 7vw, 56px);
+            }
+
+            /* COLLECTION */
+            #collection {
+                padding: 60px 24px 60px;
+            }
+
+            .coll-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ci:nth-child(n) {
+                grid-column: span 12;
+            }
+
+            .coll-title {
+                font-size: clamp(32px, 8vw, 60px);
+            }
+
+            .coll-count {
+                font-size: 60px;
+            }
+
+            /* EXPO / SERVICES */
+            #expo {
+                padding: 60px 24px;
+            }
+
+            .expo-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .expo-heading {
+                font-size: clamp(48px, 14vw, 100px);
+            }
+
+            .expo-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .expo-card {
+                border-right: none;
+                border-bottom: 1px solid #1e1e1e;
+            }
+
+            .expo-card:last-child {
+                border-bottom: none;
+            }
+
+            /* SHOOT / EDITORIAL */
+            #shoot-section {
+                padding: 60px 24px;
+            }
+
+            #shoot-section .shoot-container {
+                flex-direction: column;
+                gap: 60px;
+            }
+
+            /* CONTACT */
+            #contact {
+                padding: 80px 24px;
+            }
+
+            .ct-socials {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .ct-title {
+                font-size: clamp(36px, 10vw, 72px);
+            }
+
+            .ct-email {
+                font-size: clamp(12px, 3.5vw, 18px);
+                letter-spacing: 0.15em;
+            }
+
+            /* FOOTER */
+            footer {
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .ft-plus {
+                justify-content: center;
+            }
+        }
+
+        /* Tablets landscape (768px to 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-word-text {
+                font-size: 23vw;
+            }
+
+            #story-section {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .story-right {
+                display: none;
+            }
+
+            .coll-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .ci:nth-child(1) {
+                grid-column: span 6;
+            }
+
+            .ci:nth-child(n) {
+                grid-column: span 3;
+            }
+        }
+    </style>
 
     <style>
         @media (max-width: 768px) {
-            body { padding: 0 !important; }
-            .expo-cards { grid-template-columns: 1fr !important; }
-            nav { padding: 20px !important; }
-            .hero-b h1 { font-size: 15vw !important; }
-            section { padding: 60px 24px !important; }
-            .story-center { font-size: 16px !important; }
-            .coll-grid { grid-template-columns: 1fr !important; }
+            body {
+                padding: 0 !important;
+            }
+
+            .expo-cards {
+                grid-template-columns: 1fr !important;
+            }
+
+            nav {
+                padding: 20px !important;
+            }
+
+            .hero-b h1 {
+                font-size: 15vw !important;
+            }
+
+            section {
+                padding: 60px 24px !important;
+            }
+
+            .story-center {
+                font-size: 16px !important;
+            }
+
+            .coll-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -1992,7 +2218,8 @@
 
         <div class="chess-wrap">
             <div class="chess-grid" id="chessGrid"></div>
-            <div style="position:absolute; top:-40px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:0.3em; color:var(--muted); text-align:center; width:220px; line-height:1.6">
+            <div
+                style="position:absolute; top:-40px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:0.3em; color:var(--muted); text-align:center; width:220px; line-height:1.6">
                 Story: Visual Identity<br>
                 From a simple draping to a dynamic visual statement.
             </div>
@@ -2015,7 +2242,8 @@
   NAV
 =============================================-->
     <nav>
-        <a href="#" class="nav-logo"><img src="images/logo1.jpeg" alt="Sara Roy" style="height: 48px; display: block; mix-blend-mode: screen; filter: brightness(2) grayscale(1);"></a>
+        <a href="#" class="nav-logo"><img src="images/logo1.jpeg" alt="Sara Roy"
+                style="height: 48px; display: block; mix-blend-mode: screen; filter: brightness(2) grayscale(1);"></a>
         <div class="nav-right">
             <div class="nav-btn" id="menuBtn">MENU</div>
         </div>
@@ -2024,15 +2252,21 @@
     <!-- MENU OVERLAY -->
     <div id="menu-ov">
         <div class="menu-close" id="menuClose">CLOSE</div>
-        <a href="#shoot-section" class="menu-link h-text" data-imgs='["images/pre1.jpg","images/pre2.jpg","images/pre3.jpg"]' onclick="closeMenu()">WORKS</a>
+        <a href="#shoot-section" class="menu-link h-text"
+            data-imgs='["images/pre1.jpg","images/pre2.jpg","images/pre3.jpg"]' onclick="closeMenu()">WORKS</a>
         <div class="menu-rule"></div>
-        <a href="#story-section" class="menu-link h-text" data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]' onclick="closeMenu()">STORY</a>
+        <a href="#story-section" class="menu-link h-text"
+            data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]' onclick="closeMenu()">STORY</a>
         <div class="menu-rule"></div>
-        <a href="#collection" class="menu-link h-text" data-imgs='["images/work3.jpg","images/work2.jpg","images/pre1.jpg"]' onclick="closeMenu()">COLLECTION</a>
+        <a href="#collection" class="menu-link h-text"
+            data-imgs='["images/work3.jpg","images/work2.jpg","images/pre1.jpg"]' onclick="closeMenu()">COLLECTION</a>
         <div class="menu-rule"></div>
-        <a href="#expo" class="menu-link h-text" data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]' onclick="closeMenu()">SERVICES</a>
+        <a href="#expo" class="menu-link h-text" data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]'
+            onclick="closeMenu()">SERVICES</a>
         <div class="menu-rule"></div>
-        <a href="#contact" class="menu-link h-text" data-imgs='["images/beauty_opt.jpg","images/work1.jpg","images/work3.jpg"]' onclick="closeMenu()">CONTACT</a>
+        <a href="#contact" class="menu-link h-text"
+            data-imgs='["images/beauty_opt.jpg","images/work1.jpg","images/work3.jpg"]'
+            onclick="closeMenu()">CONTACT</a>
         <div class="menu-sub">
             <span>Milan, Italy · Est. 2025</span>
             <span>© 2025 Sara Roy</span>
@@ -2106,39 +2340,66 @@
     <!--=============================================
   EDITORIAL WORKS (1st, 2nd & 3rd Editorial)
 =============================================-->
-                <section id="shoot-section" style="padding: 100px 48px; background: var(--black); border-top: 1px solid #181818;">
+    <section id="shoot-section" style="padding: 100px 48px; background: var(--black); border-top: 1px solid #181818;">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--red); margin-bottom: 60px; display: flex; align-items: center; gap: 12px;">+ EDITORIAL ARCHIVE</div>
-            
-            <div class="shoot-container" style="display: flex; gap: 40px; justify-content: space-between; flex-wrap: wrap;">
-                
+            <div
+                style="font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--red); margin-bottom: 60px; display: flex; align-items: center; gap: 12px;">
+                + EDITORIAL ARCHIVE</div>
+
+            <div class="shoot-container"
+                style="display: flex; gap: 40px; justify-content: space-between; flex-wrap: wrap;">
+
                 <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
-                    <a href="editorial1.html" style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
-                        <img src="images/pre2.jpg" alt="Art of Luminescence" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="editorial1.html"
+                        style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="images/pre2.jpg" alt="Art of Luminescence"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
                     </a>
                     <a href="editorial1.html" style="text-decoration: none; color: var(--cream);">
-                        <div style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">1. Art of Luminescence</div>
-                        <div style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">View Editorial →</div>
-                    </a>
-                </div>
-                
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
-                    <a href="editorial2.html" style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
-                        <img src="images/editorial2_opt.jpg" alt="Second Skin" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </a>
-                    <a href="editorial2.html" style="text-decoration: none; color: var(--cream);">
-                        <div style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">2. Second Skin</div>
-                        <div style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">View Editorial →</div>
+                        <div
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            1. Art of Luminescence</div>
+                        <div
+                            style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
+                            View Editorial →</div>
                     </a>
                 </div>
 
                 <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
-                    <a href="editorial3.html" style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
-                        <img src="images/ed3_10.jpg" alt="Work Without Walls" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="editorial2.html"
+                        style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="images/editorial2_opt.jpg" alt="Second Skin"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    <a href="editorial2.html" style="text-decoration: none; color: var(--cream);">
+                        <div
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            2. Second Skin</div>
+                        <div
+                            style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
+                            View Editorial →</div>
+                    </a>
+                </div>
+
+                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                    <a href="editorial3.html"
+                        style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="images/ed3_10.jpg" alt="Work Without Walls"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
                     </a>
                     <a href="editorial3.html" style="text-decoration: none; color: var(--cream);">
-                        <div style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">3. Work Without Walls</div>
-                        <div style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">View Editorial →</div>
+                        <div
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            3. Work Without Walls</div>
+                        <div
+                            style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
+                            View Editorial →</div>
                     </a>
                 </div>
 
@@ -2189,16 +2450,23 @@
             <div class="story-label-sm">Story</div>
             <div class="story-heading">EDITORIAL<br><span style="color:var(--red)">VISION</span></div>
             <div class="story-body">
-                Sara Roy is a highly creative fashion stylist and graphic designer based in Milan, Italy. By blending advanced editorial composition with avant-garde styling concepts, she translates textile draping and silhouette lines into strong personal and cultural statements. Her work builds bridges between visual forms and modern design identity.
+                Sara Roy is a highly creative fashion stylist and graphic designer based in Milan, Italy. By blending
+                advanced editorial composition with avant-garde styling concepts, she translates textile draping and
+                silhouette lines into strong personal and cultural statements. Her work builds bridges between visual
+                forms and modern design identity.
             </div>
         </div>
         <div class="story-right rv rv-d2">
             <em>"Fashion is an interface<br>that changes and adapts."</em>
             <span class="h-text" data-imgs='["images/pre1.jpg","images/pre2.jpg","images/pre3.jpg"]'>STYLING</span><br>
-            <span class="h-text" data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]'>GRAPHIC DESIGN</span><br>
-            <span class="h-text" data-imgs='["images/work3.jpg","images/work2.jpg","images/pre1.jpg"]'>DRAPING</span><br>
-            <span class="h-text" data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]'>LUMINESCENCE</span><br>
-            <span class="h-text" data-imgs='["images/beauty_opt.jpg","images/work1.jpg","images/work3.jpg"]'>SILHOUETTE</span><br>
+            <span class="h-text" data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]'>GRAPHIC
+                DESIGN</span><br>
+            <span class="h-text"
+                data-imgs='["images/work3.jpg","images/work2.jpg","images/pre1.jpg"]'>DRAPING</span><br>
+            <span class="h-text"
+                data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]'>LUMINESCENCE</span><br>
+            <span class="h-text"
+                data-imgs='["images/beauty_opt.jpg","images/work1.jpg","images/work3.jpg"]'>SILHOUETTE</span><br>
             <span class="h-text" data-imgs='["images/work2.jpg","images/pre1.jpg","images/pre2.jpg"]'>IDENTITY</span>
         </div>
     </section>
@@ -2213,7 +2481,8 @@
         </div>
 
         <div class="scroll-text" id="scrollText">
-            The Art of Luminescence is about a body changed by light, where emotion, color, and texture vanish into a dreamscape. Fashion is an interface that changes and adapts day by day into the modern identity.
+            The Art of Luminescence is about a body changed by light, where emotion, color, and texture vanish into a
+            dreamscape. Fashion is an interface that changes and adapts day by day into the modern identity.
         </div>
 
         <div class="q-stars" style="margin-top:48px">
@@ -2323,7 +2592,8 @@
                 <div class="expo-heading">WHAT<br>I <span>CREATE</span></div>
             </div>
             <div class="expo-right">
-                <div class="expo-desc">Elegant lines, structural draping, and precise typography grids. Each project celebrates editorial storytelling and personal identity.</div>
+                <div class="expo-desc">Elegant lines, structural draping, and precise typography grids. Each project
+                    celebrates editorial storytelling and personal identity.</div>
                 <div class="expo-stat-row">
                     <div>
                         <div class="expo-stat-num"><span>3</span></div>
@@ -2345,14 +2615,16 @@
             <div class="expo-card">
                 <div class="ec-num">01</div>
                 <div class="ec-name">Fashion Styling</div>
-                <div class="ec-body">High-concept textile draping, silhouette styling, and silhouette structuring for fashion editorials, visual stories, and dynamic publications.</div>
+                <div class="ec-body">High-concept textile draping, silhouette styling, and silhouette structuring for
+                    fashion editorials, visual stories, and dynamic publications.</div>
                 <div class="ec-tags"><span class="ec-tag">Fashion</span><span class="ec-tag">Styling</span><span
                         class="ec-tag">Print</span></div>
             </div>
             <div class="expo-card">
                 <div class="ec-num">02</div>
                 <div class="ec-name">Graphic Design</div>
-                <div class="ec-body">Editorial design, typographic system design, portfolio layouts, print grids, and brand architecture tailored for premium visual brands.</div>
+                <div class="ec-body">Editorial design, typographic system design, portfolio layouts, print grids, and
+                    brand architecture tailored for premium visual brands.</div>
                 <div class="ec-tags"><span class="ec-tag">Grids</span><span class="ec-tag">Editorial</span><span
                         class="ec-tag">Design</span></div>
             </div>
@@ -2370,13 +2642,16 @@
             Let's make it <em style="color:var(--red)">real.</em>
         </div>
         <a href="mailto:itssararoy13@gmail.com" class="ct-email rv">itssararoy13@gmail.com</a><br>
-        <a href="tel:+393513551850" class="ct-email rv" style="margin-top: 16px; font-size: clamp(14px, 2vw, 18px); border-bottom: 1px solid rgba(255,229,213,0.25);">+39 351 3551850</a><br>
+        <a href="tel:+393513551850" class="ct-email rv"
+            style="margin-top: 16px; font-size: clamp(14px, 2vw, 18px); border-bottom: 1px solid rgba(255,229,213,0.25);">+39
+            351 3551850</a><br>
         <div class="ct-badge rv" style="margin-top: 32px;">
-            
+
             <div class="bd-t">Available for projects — Milan 2025</div>
         </div>
         <div class="ct-socials rv">
-            <a href="https://www.instagram.com/digital_drapess?igsh=MXdzNzdwM3RlOGZtag==" target="_blank" class="ct-s">Instagram</a>
+            <a href="https://www.instagram.com/digital_drapess?igsh=MXdzNzdwM3RlOGZtag==" target="_blank"
+                class="ct-s">Instagram</a>
             <a href="https://www.linkedin.com/in/sara-roy-69240b403" target="_blank" class="ct-s">LinkedIn</a>
         </div>
     </section>
@@ -2385,7 +2660,9 @@
   FOOTER
 =============================================-->
     <footer>
-        <div class="ft-logo"><img src="images/logo1.jpeg" alt="Sara Roy Logo" style="height: 72px; display: block; margin: 0 auto; mix-blend-mode: screen; filter: brightness(2) grayscale(1);"></div>
+        <div class="ft-logo"><img src="images/logo1.jpeg" alt="Sara Roy Logo"
+                style="height: 72px; display: block; margin: 0 auto; mix-blend-mode: screen; filter: brightness(2) grayscale(1);">
+        </div>
         <div class="ft-plus">+ + +</div>
         <div class="ft-copy">© 2025 Sara Roy, All Rights Reserved · Milan, Italy</div>
     </footer>
@@ -2428,7 +2705,7 @@
             'images/ed3_10.jpg',       // Ed3
         ];
         const cells = [];
-        
+
         for (let row = 0; row < 4; row++) {
             for (let col = 0; col < 4; col++) {
                 const cell = document.createElement('div');
@@ -2442,7 +2719,7 @@
         function updatePreloaderFrame(p) {
             const imgIdx = Math.floor(p / 4) % preImgs.length; // Change image every 4%
             const currentImg = preImgs[imgIdx];
-            
+
             // Randomly lit 6-10 cells for the "crop pattern"
             const numToLit = 6 + Math.floor(Math.random() * 5);
             const indices = [...Array(16).keys()].sort(() => Math.random() - 0.5).slice(0, numToLit);
@@ -2465,7 +2742,7 @@
         const cntInt = setInterval(() => {
             pct += Math.random() * 1.5 + 0.8; // Slower, smoother increments
             if (pct >= 100) pct = 100;
-            
+
             preNum.textContent = Math.floor(pct);
             preBar.style.width = pct + '%';
 
@@ -2492,8 +2769,8 @@
         /*=== HERO — HOVER REVEAL IMAGES INSIDE TEXT + TILT ===*/
         const heroChars = document.querySelectorAll('.hero-char');
         const heroImgs = ['images/pre3.jpg', 'images/beauty_opt.jpg', 'images/work1.jpg', 'images/pre4.jpg', 'images/ed3_1.jpg', 'images/ed3_3.jpg', 'images/ed3_7.jpg', 'images/editorial2_opt.jpg'];
-        
-        // Preload to fix slow loading
+
+
         heroImgs.forEach(src => {
             const img = new Image();
             img.src = src;
@@ -2555,7 +2832,7 @@
             el.addEventListener('mouseenter', () => {
                 const imgsData = JSON.parse(el.getAttribute('data-imgs'));
                 hReveal.classList.add('active');
-                
+
                 // Update reveal images
                 imgsData.forEach((src, idx) => {
                     if (hImgs[idx]) hImgs[idx].src = src;
@@ -2608,20 +2885,20 @@
     </script>
     <script>
         // Frontend Security Measures
-        document.addEventListener('contextmenu', function(e) {
+        document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            if (e.keyCode === 123 || 
-               (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || 
-               (e.ctrlKey && e.keyCode === 85)) {
+            if (e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+                (e.ctrlKey && e.keyCode === 85)) {
                 e.preventDefault();
             }
         });
 
-        document.addEventListener('selectstart', function(e) {
+        document.addEventListener('selectstart', function (e) {
             e.preventDefault();
         });
     </script>
