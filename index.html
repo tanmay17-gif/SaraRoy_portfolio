@@ -1986,8 +1986,8 @@
             Dept. of Sara Roy Stylist
         </div>
         <div class="pre-top-right">
-            EXPRESSION<br>
-            INNOVATION
+            VISUAL STORY<br>
+            IDENTITY STUDY
         </div>
 
         <div class="chess-wrap">
@@ -2417,8 +2417,14 @@
             'images/sara_265075_opt.jpg', // Ed2
             'images/skin_gradient_opt.jpg', // Ed2
             'images/ed3_1.jpg',        // Ed3: Work Without Walls
+            'images/ed3_2.jpg',
             'images/ed3_3.jpg',        // Ed3
+            'images/ed3_4.jpg',
+            'images/ed3_5.jpg',
+            'images/ed3_6.jpg',
             'images/ed3_7.jpg',        // Ed3
+            'images/ed3_8.jpg',
+            'images/ed3_9.jpg',
             'images/ed3_10.jpg',       // Ed3
         ];
         const cells = [];
@@ -2485,7 +2491,15 @@
 
         /*=== HERO — HOVER REVEAL IMAGES INSIDE TEXT + TILT ===*/
         const heroChars = document.querySelectorAll('.hero-char');
-        const heroImgs = ['images/pre3.jpg', 'images/beauty_opt.jpg', 'images/work1.jpg', 'images/pre4.jpg'];
+        const heroImgs = ['images/pre3.jpg', 'images/beauty_opt.jpg', 'images/work1.jpg', 'images/pre4.jpg', 'images/ed3_1.jpg', 'images/ed3_3.jpg', 'images/ed3_7.jpg', 'images/editorial2_opt.jpg'];
+        
+        // Preload to fix slow loading
+        heroImgs.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        let heroImgIdx = 0;
         let lastMx = 0;
 
         let targetTilt = 0;
@@ -2493,8 +2507,9 @@
 
         heroChars.forEach(char => {
             char.addEventListener('mouseenter', () => {
-                const randomImg = heroImgs[Math.floor(Math.random() * heroImgs.length)];
-                char.style.backgroundImage = `url('${randomImg}')`;
+                const nextImg = heroImgs[heroImgIdx];
+                heroImgIdx = (heroImgIdx + 1) % heroImgs.length;
+                char.style.backgroundImage = `url('${nextImg}')`;
             });
             char.addEventListener('mouseleave', () => {
                 char.style.backgroundImage = 'none';
