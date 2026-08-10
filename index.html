@@ -2403,6 +2403,24 @@
                     </a>
                 </div>
 
+                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                    <a href="editorial4.html"
+                        style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="images/ed4_E4_Edit_2_opt.jpg" alt="WABI SABI"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </a>
+                    <a href="editorial4.html" style="text-decoration: none; color: var(--cream);">
+                        <div
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            4. WABI SABI</div>
+                        <div
+                            style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
+                            View Editorial →</div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -2502,7 +2520,7 @@
                 <div class="tag">Collection</div>
                 <div class="coll-title">The Portfolio</div>
             </div>
-            <div class="coll-count">03</div>
+            <div class="coll-count">04</div>
         </div>
 
         <div class="coll-grid">
@@ -2551,6 +2569,22 @@
                     <div>
                         <div class="ci-t">WORK WITHOUT WALLS II</div>
                         <div class="ci-s">3RD EDITORIAL · STYLIST SARA ROY</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ci rv"><img src="images/ed4_E4_Edits_4_opt.jpg" alt="Wabi Sabi" loading="lazy">
+                <div class="ci-ov">
+                    <div>
+                        <div class="ci-t">WABI SABI I</div>
+                        <div class="ci-s">4TH EDITORIAL · STYLIST SARA ROY</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ci rv rv-d1"><img src="images/ed4_E4_Edits_6_opt.jpg" alt="Wabi Sabi" loading="lazy">
+                <div class="ci-ov">
+                    <div>
+                        <div class="ci-t">WABI SABI II</div>
+                        <div class="ci-s">4TH EDITORIAL · STYLIST SARA ROY</div>
                     </div>
                 </div>
             </div>
@@ -2703,6 +2737,9 @@
             'images/ed3_8.jpg',
             'images/ed3_9.jpg',
             'images/ed3_10.jpg',       // Ed3
+            'images/ed4_E4_Edit_2_opt.jpg', // Ed4
+            'images/ed4_E4_Edits_4_opt.jpg', // Ed4
+            'images/ed4_E4_Edits_6_opt.jpg', // Ed4
         ];
         const cells = [];
 
@@ -2768,7 +2805,7 @@
 
         /*=== HERO — HOVER REVEAL IMAGES INSIDE TEXT + TILT ===*/
         const heroChars = document.querySelectorAll('.hero-char');
-        const heroImgs = ['images/pre3.jpg', 'images/beauty_opt.jpg', 'images/work1.jpg', 'images/pre4.jpg', 'images/ed3_1.jpg', 'images/ed3_3.jpg', 'images/ed3_7.jpg', 'images/editorial2_opt.jpg'];
+        const heroImgs = ['images/pre3.jpg', 'images/beauty_opt.jpg', 'images/work1.jpg', 'images/pre4.jpg', 'images/ed3_1.jpg', 'images/ed3_3.jpg', 'images/ed3_7.jpg', 'images/editorial2_opt.jpg', 'images/ed4_E4_Edits_7_opt.jpg', 'images/ed4_E4_Edits_8_opt.jpg', 'images/ed4_E4_Edits_9_opt.jpg'];
 
 
         heroImgs.forEach(src => {
