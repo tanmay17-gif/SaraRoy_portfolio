@@ -781,7 +781,9 @@
         }
 
         .hero-char:hover {
-            color: var(--accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             transform: scaleY(1.1);
         }
 
@@ -2821,16 +2823,10 @@
             char.addEventListener('mouseenter', () => {
                 const nextImg = heroImgs[heroImgIdx];
                 heroImgIdx = (heroImgIdx + 1) % heroImgs.length;
-                
-                const hRev = document.getElementById('hover-reveal');
-                const hIm = hRev.querySelectorAll('img');
-                hRev.classList.add('active');
-                if (hIm[0]) hIm[0].src = nextImg;
-                hIm.forEach((img, i) => img.classList.toggle('active', i === 0));
+                char.style.backgroundImage = `url('${nextImg}')`;
             });
             char.addEventListener('mouseleave', () => {
-                const hRev = document.getElementById('hover-reveal');
-                hRev.classList.remove('active');
+                char.style.backgroundImage = 'none';
                 targetTilt = 0;
             });
             char.addEventListener('mousemove', e => {
