@@ -781,9 +781,7 @@
         }
 
         .hero-char:hover {
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--accent);
             transform: scaleY(1.1);
         }
 
@@ -2630,7 +2628,7 @@
                     celebrates editorial storytelling and personal identity.</div>
                 <div class="expo-stat-row">
                     <div>
-                        <div class="expo-stat-num"><span>3</span></div>
+                        <div class="expo-stat-num"><span>4</span></div>
                         <div class="expo-stat-lbl">Editorials</div>
                     </div>
                     <div>
@@ -2823,10 +2821,16 @@
             char.addEventListener('mouseenter', () => {
                 const nextImg = heroImgs[heroImgIdx];
                 heroImgIdx = (heroImgIdx + 1) % heroImgs.length;
-                char.style.backgroundImage = `url('${nextImg}')`;
+                
+                const hRev = document.getElementById('hover-reveal');
+                const hIm = hRev.querySelectorAll('img');
+                hRev.classList.add('active');
+                if (hIm[0]) hIm[0].src = nextImg;
+                hIm.forEach((img, i) => img.classList.toggle('active', i === 0));
             });
             char.addEventListener('mouseleave', () => {
-                char.style.backgroundImage = 'none';
+                const hRev = document.getElementById('hover-reveal');
+                hRev.classList.remove('active');
                 targetTilt = 0;
             });
             char.addEventListener('mousemove', e => {
