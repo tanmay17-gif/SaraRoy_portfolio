@@ -820,9 +820,9 @@
             }
         }
 
-        /* PHILOSOPHY / CONTACT SPLIT SECTION */
+        /* PHILOSOPHY / CONTACT SPLIT SECTION — fixed: proper top-alignment, compact layout */
         #philosophy {
-            padding: 100px 48px;
+            padding: 80px 48px;
             background: var(--black);
             border-top: 1px solid var(--gray);
         }
@@ -831,27 +831,32 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 120px;
-            align-items: center;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: 72px;
+            align-items: start;
         }
 
         .ph-images {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
             width: 100%;
+            max-width: 520px;
         }
 
         .ph-img-wrap {
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 4px;
             background: #111;
+            /* constrain height so images don't dominate viewport — match mockup */
+            max-height: 420px;
         }
 
         .ph-img-wrap img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            max-height: 420px;
+            object-fit: cover;
             display: block;
             transition: transform 0.6s ease;
         }
@@ -860,20 +865,31 @@
             transform: scale(1.03);
         }
 
-        .ph-img-top {}
+        .ph-img-top {
+            aspect-ratio: 4 / 3;
+        }
 
-        .ph-img-bot {}
+        .ph-img-bot {
+            aspect-ratio: 4 / 3.2;
+        }
 
         .ph-contact {
-            padding-left: 32px;
+            padding-left: 24px;
+            padding-top: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .ph-c-label {
             font-size: 9px;
             letter-spacing: 0.5em;
             text-transform: uppercase;
-            color: var(--red);
-            margin-bottom: 48px;
+            color: var(--muted);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .ph-c-links {
@@ -885,7 +901,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            padding: 22px 0;
+            padding: 26px 0;
             border-bottom: 1px solid #1a1a1a;
             text-decoration: none;
             color: var(--cream);
@@ -2079,21 +2095,28 @@
 
             /* PHILOSOPHY SPLIT */
             #philosophy {
-                padding: 80px 24px;
+                padding: 60px 24px;
             }
 
             .ph-inner {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 40px;
+                align-items: start;
             }
 
             .ph-images {
                 width: 100%;
-                max-width: 320px;
+                max-width: 100%;
+            }
+
+            .ph-img-wrap,
+            .ph-img-wrap img {
+                max-height: 380px;
             }
 
             .ph-contact {
                 padding-left: 0;
+                padding-top: 0;
             }
 
             /* STORY */
@@ -2568,7 +2591,10 @@
                 <!-- FILM 1 -->
                 <div class="film-item rv" style="display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start;">
                     <div class="film-video" style="width: 100%; background: #0a0a0a; border-radius: 4px; overflow: hidden; position: relative;">
-                        <video src="videos/MVI_8744_FTP.mp4" controls style="width: 100%; display: block;" poster="images/sara_264988_opt.jpg" playsinline preload="metadata"></video>
+                        <video autoplay muted loop playsinline controls preload="metadata" poster="images/sara_264988_opt.jpg" style="width: 100%; display: block;">
+                            <source src="videos/MVI_8744_FTP.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="film-info" style="padding-top: 12px;">
                         <h3 style="font-family: 'Aeonik', sans-serif; font-size: clamp(30px, 4vw, 48px); margin-bottom: 24px; color: var(--cream); font-weight: 700;">Art Of Living</h3>
