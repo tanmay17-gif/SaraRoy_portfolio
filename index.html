@@ -830,16 +830,18 @@
         .ph-inner {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 38% 1fr;
-            gap: 72px;
-            align-items: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
         }
 
         .ph-images {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 20px;
+            width: 320px;
+            flex-shrink: 0;
         }
 
         .ph-img-wrap {
@@ -2082,8 +2084,13 @@
             }
 
             .ph-inner {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 40px;
+            }
+
+            .ph-images {
+                width: 100%;
+                max-width: 320px;
             }
 
             .ph-contact {
@@ -2416,6 +2423,7 @@
         </div>
     </section>
 
+
     <!-- CONTACT SPLIT SECTION -->
     <section id="philosophy">
         <div class="ph-inner">
@@ -2442,8 +2450,13 @@
                         <span class="ph-c-name">LinkedIn</span>
                         <span class="ph-c-arrow">&#8594;</span>
                     </a>
-                    <a href="mailto:itssararoy13@gmail.com" class="ph-c-link">
+                    <a style="cursor: default;" class="ph-c-link">
                         <span class="ph-c-num">03</span>
+                        <span class="ph-c-name">Behance</span>
+                        <span class="ph-c-arrow">&#8594;</span>
+                    </a>
+                    <a href="mailto:itssararoy13@gmail.com" class="ph-c-link">
+                        <span class="ph-c-num">04</span>
                         <span class="ph-c-name">Official Email</span>
                         <span class="ph-c-arrow">&#8594;</span>
                     </a>
@@ -2539,6 +2552,47 @@
                     </a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!--=============================================
+  FASHION FILM SECTION
+=============================================-->
+    <section id="film-section" style="padding: 100px 48px; background: var(--black); border-top: 1px solid #181818;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--red); margin-bottom: 60px; display: flex; align-items: center; gap: 12px;">
+                + FASHION FILM
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 80px;">
+                <!-- FILM 1 -->
+                <div class="film-item rv" style="display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start;">
+                    <div class="film-video" style="width: 100%; background: #0a0a0a; border-radius: 4px; overflow: hidden; position: relative;">
+                        <video src="videos/MVI_8744_FTP.mp4" controls style="width: 100%; display: block;" poster="images/sara_264988_opt.jpg"></video>
+                    </div>
+                    <div class="film-info" style="padding-top: 12px;">
+                        <h3 style="font-family: 'Aeonik', sans-serif; font-size: clamp(30px, 4vw, 48px); margin-bottom: 24px; color: var(--cream); font-weight: 700;">Art Of Living</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 24px;">
+                            This fashion film idea is about "ART of LIVING". The concept of ritual, routine as a framework that molds an individual in a certain way. It shows the time to prepare and get a way to control your body and mind before interacting with the outside world. The video shows fashion as an actual experience. As a part of this routine, clothing serves as an identity, independence, and a modern way of living.
+                        </p>
+                        <div style="font-size: 10px; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase;">NOW PLAYING</div>
+                    </div>
+                </div>
+
+                <!-- FILM 2 (COMING SOON) -->
+                <div class="film-item rv rv-d1" style="display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start; opacity: 0.5;">
+                    <div class="film-video" style="width: 100%; aspect-ratio: 16/9; background: #111; border-radius: 4px; display: flex; align-items: center; justify-content: center; border: 1px dashed #333;">
+                        <span style="font-size: 12px; letter-spacing: 0.3em; color: #555; text-transform: uppercase;">UNRELEASED</span>
+                    </div>
+                    <div class="film-info" style="padding-top: 12px;">
+                        <h3 style="font-family: 'Aeonik', sans-serif; font-size: clamp(30px, 4vw, 48px); margin-bottom: 24px; color: var(--cream); font-weight: 700;">Film 02</h3>
+                        <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 24px;">
+                            Details and concept for the second fashion film will be revealed soon. Currently in pre-production.
+                        </p>
+                        <div style="font-size: 10px; letter-spacing: 0.2em; color: #555; text-transform: uppercase;">COMING SOON</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
