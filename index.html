@@ -831,17 +831,17 @@
             max-width: 1240px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 36px;
+            grid-template-columns: 260px 1fr;
+            gap: 32px;
             align-items: stretch;
         }
 
         .ph-images {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
-            max-width: 300px;
+            max-width: 260px;
             height: 100%;
             align-self: start;
         }
@@ -2104,28 +2104,39 @@
                 font-size: clamp(40px, 12vw, 80px);
             }
 
-            /* PHILOSOPHY SPLIT */
+            /* PHILOSOPHY SPLIT — mobile: stack without overlap, images full width */
             #philosophy {
-                padding: 60px 24px;
+                padding: 48px 20px;
             }
 
             .ph-inner {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                align-items: start;
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+                align-items: stretch;
             }
 
             .ph-images {
                 width: 100%;
                 max-width: 100%;
                 height: auto;
+                align-self: auto;
+                gap: 12px;
             }
 
-            .ph-img-wrap,
-            .ph-img-wrap img {
-                max-height: 380px;
+            .ph-img-wrap {
+                max-height: none;
                 height: auto;
                 flex: none;
+                width: 100%;
+            }
+
+            .ph-img-wrap img {
+                max-height: none;
+                height: auto;
+                width: 100%;
+                flex: none;
+                object-fit: contain;
             }
 
             .ph-contact {
@@ -2133,16 +2144,19 @@
                 padding-top: 0;
                 height: auto;
                 min-height: auto;
+                align-self: auto;
                 justify-content: flex-start;
             }
 
             .ph-c-links {
                 flex: none;
+                justify-content: flex-start;
+                gap: 0;
             }
 
             .ph-c-link {
                 flex: none;
-                padding: 22px 0;
+                padding: 18px 0;
                 min-height: auto;
             }
             }
