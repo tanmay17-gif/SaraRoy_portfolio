@@ -820,30 +820,126 @@
             }
         }
 
-        /* PHILOSOPHY SECTION */
+        /* PHILOSOPHY / CONTACT SPLIT SECTION */
         #philosophy {
-            padding: 160px 48px;
+            padding: 100px 48px;
             background: var(--black);
             border-top: 1px solid var(--gray);
-            text-align: center;
         }
 
-        .ph-quote {
-            font-family: 'Aeonik', 'Tomato Grotesk', sans-serif;
-            font-size: 4vw;
-            color: var(--cream);
-            max-width: 900px;
+        .ph-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .ph-author {
+        .ph-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .ph-img-wrap {
+            overflow: hidden;
+            border-radius: 4px;
+            background: #111;
+        }
+
+        .ph-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .ph-img-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .ph-img-top {
+            aspect-ratio: 3/4;
+        }
+
+        .ph-img-bot {
+            aspect-ratio: 3/4;
             margin-top: 48px;
-            font-size: 12px;
-            letter-spacing: 0.4em;
+        }
+
+        .ph-contact {
+            padding-left: 32px;
+        }
+
+        .ph-c-label {
+            font-size: 9px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 48px;
+        }
+
+        .ph-c-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ph-c-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 0;
+            border-bottom: 1px solid #1a1a1a;
+            text-decoration: none;
+            color: var(--cream);
+            transition: color 0.25s, border-color 0.25s;
+        }
+
+        .ph-c-link:first-child {
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .ph-c-link:hover {
+            color: var(--red);
+            border-color: #333;
+        }
+
+        .ph-c-num {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--muted);
+            min-width: 28px;
+        }
+
+        .ph-c-name {
+            font-family: 'Aeonik', sans-serif;
+            font-size: clamp(18px, 2.5vw, 34px);
+            font-weight: 400;
+            flex: 1;
+            letter-spacing: -0.01em;
+        }
+
+        .ph-c-sub {
+            font-size: 10px;
+            letter-spacing: 0.2em;
             color: var(--muted);
             text-transform: uppercase;
+        }
+
+        .ph-c-arrow {
+            font-size: 18px;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity 0.2s, transform 0.2s;
+            color: var(--red);
+        }
+
+        .ph-c-link:hover .ph-c-arrow {
+            opacity: 1;
+            transform: translateX(0);
         }
 
 
@@ -1987,13 +2083,22 @@
                 font-size: clamp(40px, 12vw, 80px);
             }
 
-            /* PHILOSOPHY */
+            /* PHILOSOPHY SPLIT */
             #philosophy {
                 padding: 80px 24px;
             }
 
-            .ph-quote {
-                font-size: 6vw;
+            .ph-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .ph-contact {
+                padding-left: 0;
+            }
+
+            .ph-img-bot {
+                margin-top: 24px;
             }
 
             /* STORY */
@@ -2258,9 +2363,7 @@
         <a href="#story-section" class="menu-link h-text"
             data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]' onclick="closeMenu()">STORY</a>
         <div class="menu-rule"></div>
-        <a href="#collection" class="menu-link h-text"
-            data-imgs='["images/work3.jpg","images/work2.jpg","images/pre1.jpg"]' onclick="closeMenu()">COLLECTION</a>
-        <div class="menu-rule"></div>
+
         <a href="#expo" class="menu-link h-text" data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]'
             onclick="closeMenu()">SERVICES</a>
         <div class="menu-rule"></div>
@@ -2326,12 +2429,45 @@
         </div>
     </section>
 
-    <!-- PHILOSOPHY SECTION PORTED FROM SCRAPE -->
+    <!-- CONTACT SPLIT SECTION -->
     <section id="philosophy">
-        <div class="ph-quote rv">
-            "The most exciting attractions are between opposites that never meet."
+        <div class="ph-inner">
+            <!-- LEFT: Two images -->
+            <div class="ph-images">
+                <div class="ph-img-wrap ph-img-top rv">
+                    <img src="images/contact_phone.jpg" alt="For Creative Crisis Only" loading="lazy">
+                </div>
+                <div class="ph-img-wrap ph-img-bot rv rv-d1">
+                    <img src="images/contact_eyes.jpg" alt="Sara Roy Visual" loading="lazy">
+                </div>
+            </div>
+            <!-- RIGHT: Contact Info & Socials -->
+            <div class="ph-contact rv rv-d2">
+                <div class="ph-c-label">Contact Information /</div>
+                <nav class="ph-c-links">
+                    <a href="https://www.instagram.com/digital_drapess?igsh=MXdzNzdwM3RlOGZtag==" target="_blank" class="ph-c-link">
+                        <span class="ph-c-num">01</span>
+                        <span class="ph-c-name">Instagram</span>
+                        <span class="ph-c-arrow">&#8594;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sara-roy-69240b403" target="_blank" class="ph-c-link">
+                        <span class="ph-c-num">02</span>
+                        <span class="ph-c-name">LinkedIn</span>
+                        <span class="ph-c-arrow">&#8594;</span>
+                    </a>
+                    <a href="https://www.behance.net/sararoy" target="_blank" class="ph-c-link">
+                        <span class="ph-c-num">03</span>
+                        <span class="ph-c-name">Behance</span>
+                        <span class="ph-c-arrow">&#8594;</span>
+                    </a>
+                    <a href="mailto:itssararoy13@gmail.com" class="ph-c-link">
+                        <span class="ph-c-num">04</span>
+                        <span class="ph-c-name">Official Email</span>
+                        <span class="ph-c-arrow">&#8594;</span>
+                    </a>
+                </nav>
+            </div>
         </div>
-        <div class="ph-author rv rv-d1">© 2025 SARA ROY</div>
     </section>
 
     <!--=============================================
@@ -2511,85 +2647,7 @@
         <div class="q-source">Sara Roy · Stylist & Graphic Designer · Milan 2025</div>
     </section>
 
-    <!--=============================================
-  COLLECTION / GALLERY
-=============================================-->
-    <section id="collection">
-        <div class="coll-header rv">
-            <div class="coll-h-left">
-                <div class="tag">Collection</div>
-                <div class="coll-title">The Portfolio</div>
-            </div>
-            <div class="coll-count">04</div>
-        </div>
 
-        <div class="coll-grid">
-            <div class="ci rv"><img src="images/pre2.jpg" alt="Luminescence" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">LUMINESCENCE I</div>
-                        <div class="ci-s">1ST EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv rv-d1"><img src="images/pre3.jpg" alt="Luminescence" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">LUMINESCENCE II</div>
-                        <div class="ci-s">1ST EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv rv-d2"><img src="images/sara_264988_opt.jpg" alt="Second Skin" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">SECOND SKIN I</div>
-                        <div class="ci-s">2ND EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv"><img src="images/beauty_opt.jpg" alt="Second Skin" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">SECOND SKIN II</div>
-                        <div class="ci-s">2ND EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv rv-d1"><img src="images/ed3_1.jpg" alt="Work Without Walls" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">WORK WITHOUT WALLS I</div>
-                        <div class="ci-s">3RD EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv rv-d2"><img src="images/ed3_4.jpg" alt="Work Without Walls" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">WORK WITHOUT WALLS II</div>
-                        <div class="ci-s">3RD EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv"><img src="images/ed4_E4_Edits_4_opt.jpg" alt="Wabi Sabi" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">WABI SABI I</div>
-                        <div class="ci-s">4TH EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ci rv rv-d1"><img src="images/ed4_E4_Edits_6_opt.jpg" alt="Wabi Sabi" loading="lazy">
-                <div class="ci-ov">
-                    <div>
-                        <div class="ci-t">WABI SABI II</div>
-                        <div class="ci-s">4TH EDITORIAL · STYLIST SARA ROY</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!--=============================================
   WORDS STRIP
@@ -2683,11 +2741,7 @@
 
             <div class="bd-t">Available for projects — Milan 2025</div>
         </div>
-        <div class="ct-socials rv">
-            <a href="https://www.instagram.com/digital_drapess?igsh=MXdzNzdwM3RlOGZtag==" target="_blank"
-                class="ct-s">Instagram</a>
-            <a href="https://www.linkedin.com/in/sara-roy-69240b403" target="_blank" class="ct-s">LinkedIn</a>
-        </div>
+
     </section>
 
     <!--=============================================
@@ -2920,25 +2974,7 @@
         updateQuote();
 
     </script>
-    <script>
-        // Frontend Security Measures
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
 
-        document.addEventListener('keydown', function (e) {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            if (e.keyCode === 123 ||
-                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
-                (e.ctrlKey && e.keyCode === 85)) {
-                e.preventDefault();
-            }
-        });
-
-        document.addEventListener('selectstart', function (e) {
-            e.preventDefault();
-        });
-    </script>
 </body>
 
 </html>
