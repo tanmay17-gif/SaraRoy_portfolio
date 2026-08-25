@@ -831,16 +831,15 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            grid-template-columns: 38% 1fr;
+            gap: 72px;
+            align-items: start;
         }
 
         .ph-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .ph-img-wrap {
@@ -851,24 +850,18 @@
 
         .ph-img-wrap img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
             transition: transform 0.6s ease;
         }
 
         .ph-img-wrap:hover img {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
-        .ph-img-top {
-            aspect-ratio: 3/4;
-        }
+        .ph-img-top {}
 
-        .ph-img-bot {
-            aspect-ratio: 3/4;
-            margin-top: 48px;
-        }
+        .ph-img-bot {}
 
         .ph-contact {
             padding-left: 32px;
@@ -2090,15 +2083,11 @@
 
             .ph-inner {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                gap: 40px;
             }
 
             .ph-contact {
                 padding-left: 0;
-            }
-
-            .ph-img-bot {
-                margin-top: 24px;
             }
 
             /* STORY */
@@ -2364,9 +2353,7 @@
             data-imgs='["images/pre4.jpg","images/beauty_opt.jpg","images/work1.jpg"]' onclick="closeMenu()">STORY</a>
         <div class="menu-rule"></div>
 
-        <a href="#expo" class="menu-link h-text" data-imgs='["images/pre2.jpg","images/pre3.jpg","images/pre4.jpg"]'
-            onclick="closeMenu()">SERVICES</a>
-        <div class="menu-rule"></div>
+
         <a href="#contact" class="menu-link h-text"
             data-imgs='["images/beauty_opt.jpg","images/work1.jpg","images/work3.jpg"]'
             onclick="closeMenu()">CONTACT</a>
@@ -2455,13 +2442,8 @@
                         <span class="ph-c-name">LinkedIn</span>
                         <span class="ph-c-arrow">&#8594;</span>
                     </a>
-                    <a href="https://www.behance.net/sararoy" target="_blank" class="ph-c-link">
-                        <span class="ph-c-num">03</span>
-                        <span class="ph-c-name">Behance</span>
-                        <span class="ph-c-arrow">&#8594;</span>
-                    </a>
                     <a href="mailto:itssararoy13@gmail.com" class="ph-c-link">
-                        <span class="ph-c-num">04</span>
+                        <span class="ph-c-num">03</span>
                         <span class="ph-c-name">Official Email</span>
                         <span class="ph-c-arrow">&#8594;</span>
                     </a>
@@ -2679,8 +2661,6 @@
     <section id="expo">
         <div class="expo-inner rv">
             <div class="expo-left">
-                <div class="expo-tag">00_4 · SERVICES</div>
-                <div class="expo-label">Draping & Layouts</div>
                 <div class="expo-heading">WHAT<br>I <span>CREATE</span></div>
             </div>
             <div class="expo-right">
