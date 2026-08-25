@@ -830,23 +830,22 @@
         .ph-inner {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
             align-items: center;
-            justify-content: center;
-            gap: 100px;
         }
 
         .ph-images {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            width: 320px;
-            flex-shrink: 0;
+            gap: 24px;
+            width: 100%;
         }
 
         .ph-img-wrap {
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 8px;
             background: #111;
         }
 
@@ -2490,7 +2489,7 @@
                     </a>
                     <a href="editorial1.html" style="text-decoration: none; color: var(--cream);">
                         <div
-                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(22px, 2.5vw, 40px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; overflow-wrap: break-word; word-break: break-word;">
                             1. Art of Luminescence</div>
                         <div
                             style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
@@ -2508,7 +2507,7 @@
                     </a>
                     <a href="editorial2.html" style="text-decoration: none; color: var(--cream);">
                         <div
-                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(22px, 2.5vw, 40px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; overflow-wrap: break-word; word-break: break-word;">
                             2. Second Skin</div>
                         <div
                             style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
@@ -2526,7 +2525,7 @@
                     </a>
                     <a href="editorial3.html" style="text-decoration: none; color: var(--cream);">
                         <div
-                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(22px, 2.5vw, 40px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; overflow-wrap: break-word; word-break: break-word;">
                             3. Work Without Walls</div>
                         <div
                             style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
@@ -2544,7 +2543,7 @@
                     </a>
                     <a href="editorial4.html" style="text-decoration: none; color: var(--cream);">
                         <div
-                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(26px, 3vw, 48px); font-weight: 700; margin-bottom: 12px;">
+                            style="font-family: 'Aeonik', sans-serif; font-size: clamp(22px, 2.5vw, 40px); font-weight: 700; margin-bottom: 12px; line-height: 1.1; overflow-wrap: break-word; word-break: break-word;">
                             4. WABI SABI</div>
                         <div
                             style="font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">
@@ -2569,7 +2568,7 @@
                 <!-- FILM 1 -->
                 <div class="film-item rv" style="display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start;">
                     <div class="film-video" style="width: 100%; background: #0a0a0a; border-radius: 4px; overflow: hidden; position: relative;">
-                        <video src="videos/MVI_8744_FTP.mp4" controls style="width: 100%; display: block;" poster="images/sara_264988_opt.jpg"></video>
+                        <video src="videos/MVI_8744_FTP.mp4" controls style="width: 100%; display: block;" poster="images/sara_264988_opt.jpg" playsinline preload="metadata"></video>
                     </div>
                     <div class="film-info" style="padding-top: 12px;">
                         <h3 style="font-family: 'Aeonik', sans-serif; font-size: clamp(30px, 4vw, 48px); margin-bottom: 24px; color: var(--cream); font-weight: 700;">Art Of Living</h3>
