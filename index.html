@@ -916,7 +916,7 @@
         .ph-c-link {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
             flex: none;
             padding: 22px 0;
             border-bottom: 1px solid #1a1a1a;
@@ -939,7 +939,8 @@
             font-size: 10px;
             letter-spacing: 0.3em;
             color: var(--muted);
-            min-width: 28px;
+            min-width: 36px;
+            flex-shrink: 0;
         }
 
         .ph-c-name {
@@ -2275,19 +2276,14 @@
             }
 
             #shoot-section .shoot-container {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                gap: 20px;
-                padding-bottom: 16px;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+                overflow-x: visible;
             }
 
             #shoot-section .shoot-container > div {
-                min-width: 280px;
-                flex: 0 0 280px;
-                scroll-snap-align: start;
+                min-width: 0;
             }
 
             /* CONTACT */
@@ -2583,9 +2579,9 @@
                 + EDITORIAL ARCHIVE</div>
 
             <div class="shoot-container"
-                style="display: flex; gap: 40px; justify-content: space-between; flex-wrap: wrap;">
+                style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; align-items: start;">
 
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
                     <a href="editorial1.html"
                         style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
                         <img src="images/pre2.jpg" alt="Art of Luminescence"
@@ -2603,7 +2599,7 @@
                     </a>
                 </div>
 
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
                     <a href="editorial2.html"
                         style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
                         <img src="images/editorial2_opt.jpg" alt="Second Skin"
@@ -2621,7 +2617,7 @@
                     </a>
                 </div>
 
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
                     <a href="editorial3.html"
                         style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
                         <img src="images/ed3_10.jpg" alt="Work Without Walls"
@@ -2639,7 +2635,7 @@
                     </a>
                 </div>
 
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
                     <a href="editorial4.html"
                         style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
                         <img src="images/ed4_E4_Edit_2_opt.jpg" alt="WABI SABI"
@@ -2657,7 +2653,7 @@
                     </a>
                 </div>
 
-                <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; flex-direction: column; gap: 24px;">
                     <a href="editorial5.html"
                         style="display: block; width: 100%; aspect-ratio: 1; overflow: hidden; position: relative; border-radius: 4px;">
                         <img src="images/editorial5/tv screen look 1.png" alt="FALSE MEMORY"
@@ -2708,8 +2704,8 @@
 
                 <!-- FILM 2 -->
                 <div class="film-item rv rv-d1" style="display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start;">
-                    <div class="film-video" style="width: 100%; background: #0a0a0a; border-radius: 4px; overflow: hidden; position: relative;">
-                        <video autoplay muted loop playsinline controls preload="metadata" style="width: 100%; display: block;">
+                    <div class="film-video" style="width: 100%; aspect-ratio: 16/9; background: #0a0a0a; border-radius: 4px; overflow: hidden; position: relative;">
+                        <video controls preload="metadata" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                             <source src="videos/Video Forest.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -2851,7 +2847,7 @@
                     celebrates editorial storytelling and personal identity.</div>
                 <div class="expo-stat-row">
                     <div>
-                        <div class="expo-stat-num"><span>4</span></div>
+                        <div class="expo-stat-num"><span>5+</span></div>
                         <div class="expo-stat-lbl">Editorials</div>
                     </div>
                     <div>
@@ -2859,8 +2855,12 @@
                         <div class="expo-stat-lbl">Looks</div>
                     </div>
                     <div>
-                        <div class="expo-stat-num"><span>∞</span></div>
+                        <div class="expo-stat-num"><span>&#8734;</span></div>
                         <div class="expo-stat-lbl">Creative</div>
+                    </div>
+                    <div>
+                        <div class="expo-stat-num"><span>2</span></div>
+                        <div class="expo-stat-lbl">Fashion Films</div>
                     </div>
                 </div>
             </div>
